@@ -15,3 +15,5 @@ vim.keymap.set("n", "<A-h>", ":bprevious<cr>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<C-n>", ":Neotree filesystem filesystem reveal right<CR>", { desc = "Open Neotree" })
 
 require("config.lazy")
+
+
