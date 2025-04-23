@@ -4,23 +4,12 @@ return {
 	config = function()
 		local wk = require("which-key")
 		wk.setup()
-		wk.register({
-			["<leader>"] = {
-				c = { group = "+Code/LSP" },
-				t = { group = "+Testing" },
-				d = { group = "+Debug" },
-				s = { group = "+Sessions" },
-				f = { group = "+Find/Telescope" },
-			},
+		wk.add({
+			{ "<leader>c", group = "Code/LSP" },
+			{ "<leader>d", group = "Debug" },
+			{ "<leader>f", group = "Find/Telescope" },
+			{ "<leader>s", group = "Sessions" },
+			{ "<leader>t", group = "Testing" },
 		})
 	end,
-	keys = {
-		{
-			"<leader>?",
-			function()
-				require("which-key").show({ global = false })
-			end,
-			desc = "Buffer Local Keymaps (which-key)",
-		},
-	},
 }
