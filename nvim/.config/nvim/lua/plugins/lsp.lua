@@ -33,10 +33,16 @@ return {
                 capabilities=capabilities
 			})
 
-			vim.keymap.set("n", "<C-i>", vim.lsp.buf.hover, {})
-			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-			vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, {})
-			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "<leader>ch", vim.lsp.buf.hover, {desc="Show documentation hover"})
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {desc="Go to definition"})
+			vim.keymap.set("n", "<leader>cr", vim.lsp.buf.references, {desc="Find references"})
+			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {desc="Code actions"})
+			vim.keymap.set("n", "<leader>ci", vim.lsp.buf.implementation, {desc="Go to implementation"})
+			vim.keymap.set("n", "<leader>ct", vim.lsp.buf.type_definition, {desc="Go to type definition"})
+			vim.keymap.set("n", "<leader>cn", vim.lsp.buf.rename, {desc="Rename symbol"})
+			vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, {desc="Show line diagnostics"})
+			vim.keymap.set("n", "<leader>cj", vim.diagnostic.goto_next, {desc="Next diagnostic"})
+			vim.keymap.set("n", "<leader>ck", vim.diagnostic.goto_prev, {desc="Previous diagnostic"})
 		end,
 	},
 	{
@@ -59,6 +65,10 @@ return {
 				automatic_installation = true,
 			})
 			vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, {desc="Code format"})
+			vim.keymap.set("n", "<leader>cl", "<cmd>LspInfo<cr>", {desc="LSP info"})
+			vim.keymap.set("n", "<leader>cs", "<cmd>LspStart<cr>", {desc="Start LSP"})
+			vim.keymap.set("n", "<leader>cx", "<cmd>LspStop<cr>", {desc="Stop LSP"})
+			vim.keymap.set("n", "<leader>cR", "<cmd>LspRestart<cr>", {desc="Restart LSP"})
 		end,
 	},
 }
